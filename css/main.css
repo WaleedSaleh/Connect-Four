@@ -1,0 +1,64 @@
+body {
+    font-family: 'Barriecito', cursive;
+}
+
+#headerTxt {
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 40px;
+}
+
+.button-container {
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    display: block;
+    padding: 20px;
+}
+
+.button-container a {
+    width: 40%;
+}
+
+#rulesContainer {
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 40px;
+}
+
+.rulesList li,
+p {
+    font-size: 25px;
+}
+
+#note {
+    color: white;
+    background-color: rgb(21, 15, 18);
+}
+
+table {
+    margin: 0 auto;
+    width: 100%;
+    /* border: 2px solid black; */
+}
+
+
+/* .table-holder {
+    border: 2px solid black;
+    margin-top: 40PX;
+} */
+
+.flex-container {
+    margin: 0 auto;
+    display: flex;
+}
+
+.flex-container>div {
+    margin: -5px;
+}
+
+.circles-flex {
+    margin: 0 auto;
+    max-width: 50%;
+    /* margin-top: 40px; */
+}
