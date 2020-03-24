@@ -39,26 +39,26 @@ function checkNameAndColors(playerOne, playerOneColor, playeTwo, playerTwoColor)
 
 function onReady() {
     //Start by gettiing the users info
-    // var playerOne = prompt("Enter player one name: ");
-    // var playerOneColor = prompt("Enter player one color: ");
+    var playerOne = prompt("Enter player one name: ");
+    var playerOneColor = prompt("Enter player one color: ");
 
-    // var playerTwo = prompt("Enter player two name: ");
-    // var playerTwoColor = prompt("Enter player two color: ");
+    var playerTwo = prompt("Enter player two name: ");
+    var playerTwoColor = prompt("Enter player two color: ");
 
-    // Check if there is any duplicate value
-    //var check = checkNameAndColors(playerOne, playerOneColor, playerTwo, playerTwoColor);
-    //check ? alert("You are ready to start the game, good lcuk") : onReady();
+    //Check if there is any duplicate value
+    var check = checkNameAndColors(playerOne, playerOneColor, playerTwo, playerTwoColor);
+    check ? alert("You are ready to start the game, good lcuk") : onReady();
 
-    // Grabing all the circles in the game
+    //Grabing all the circles in the game
     var circles = document.querySelectorAll('circle');
 
     for (var i = 0; i < circles.length; i++) {
         circles[i].addEventListener('click', function() {
             if (playerOneFlag) {
-                playerOne(this);
+                playerOneMove(this);
                 findWinner(playerOneList, playerTwoList, { name: "Player1" });
             } else if (playerTwoFlag) {
-                playerTwo(this);
+                playerTwoMove(this);
                 findWinner(playerOneList, playerTwoList, { name: "Player2" });
             }
         })
@@ -67,8 +67,8 @@ function onReady() {
     //findcircles(playerOneList, playerTwoList);
 }
 
-function playerOne(circle) {
-    player.textContent = "Waleed => Red";
+function playerOneMove(circle) {
+    player.textContent = "Player 1 => Red";
     circle.setAttribute("fill", 'red');
     row = circle.getAttribute("row");
     col = circle.getAttribute("col");
@@ -80,8 +80,8 @@ function playerOne(circle) {
 }
 
 
-function playerTwo(circle) {
-    player.textContent = "Salah => Green";
+function playerTwoMove(circle) {
+    player.textContent = "Player 2 => Green";
     circle.setAttribute('fill', 'green');
     row = circle.getAttribute("row");
     col = circle.getAttribute("col");
