@@ -10,7 +10,7 @@ var table = $('table tr');
 
 
 function reportWin(rowNum, colNum) {
-    console.log("You won starting at this row,col");
+    alert("You won starting at this row,col " + rowNum + "," + colNum);
     console.log(rowNum);
     console.log(colNum);
 }
@@ -45,7 +45,7 @@ function horizontalWinCheck() {
     for (var row = 0; row < 6; row++) {
         for (var col = 0; col < 4; col++) {
             if (colorMatchCheck(returnColor(row, col), returnColor(row, col + 1), returnColor(row, col + 2), returnColor(row, col + 3))) {
-                console.log('horiz');
+                console.log('horizontal');
                 reportWin(row, col);
                 return true;
             } else {
@@ -75,11 +75,11 @@ function diagonalWinCheck() {
     for (var col = 0; col < 5; col++) {
         for (var row = 0; row < 7; row++) {
             if (colorMatchCheck(returnColor(row, col), returnColor(row + 1, col + 1), returnColor(row + 2, col + 2), returnColor(row + 3, col + 3))) {
-                console.log('diag');
+                console.log('diagonal');
                 reportWin(row, col);
                 return true;
             } else if (colorMatchCheck(returnColor(row, col), returnColor(row - 1, col + 1), returnColor(row - 2, col + 2), returnColor(row - 3, col + 3))) {
-                console.log('diag');
+                console.log('diagonal');
                 reportWin(row, col);
                 return true;
             } else {
@@ -104,7 +104,7 @@ var currentName = player1;
 var currentColor = player1Color;
 
 // Start with Player One
-$('h3').text(player1 + ": it is your turn, please pick a column to drop your blue chip.");
+$('h3').text(player1 + ": it is your turn");
 
 $('.board button').on('click', function() {
 
@@ -128,11 +128,11 @@ $('.board button').on('click', function() {
     // Re-Check who the current Player is.
     if (currentPlayer === 1) {
         currentName = player1;
-        $('h3').text(currentName + ": it is your turn, please pick a column to drop your blue chip.");
+        $('h3').text(currentName + ": it is your turn");
         currentColor = player1Color;
     } else {
         currentName = player2;
-        $('h3').text(currentName + ": it is your turn, please pick a column to drop your red chip.");
+        $('h3').text(currentName + ": it is your turn");
         currentColor = player2Color;
     }
 
